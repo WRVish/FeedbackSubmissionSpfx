@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "feedback-submission-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/feedbackSubmission/FeedbackSubmissionWebPart.js",
+          "manifest": "./src/webparts/feedbackSubmission/FeedbackSubmissionWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "FeedbackSubmissionWebPartStrings": "lib/webparts/feedbackSubmission/loc/{locale}.js"
+  }
+}

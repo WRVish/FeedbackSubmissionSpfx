@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "feedback-submission-solution-client-side-solution",
+    "id": "7ce23e52-e0d6-45c9-9b44-0f2dd477d82e",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.21.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "feedback-submission-solution description"
+      },
+      "longDescription": {
+        "default": "feedback-submission-solution description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "feedback-submission-solution Feature",
+        "description": "The feature that activates elements of the feedback-submission-solution solution.",
+        "id": "91c29d05-3573-4114-94f1-21aebab5f0a5",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/feedback-submission-solution.sppkg"
+  }
+}
