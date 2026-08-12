@@ -1,10 +1,10 @@
-# feedback-submission-solution
+# Feedback Submission SPFx Web Part
 
 ## Summary
 
-Short summary on functionality and used technologies.
+The **Feedback Submission Solution** is a SharePoint Framework (SPFx) client-side web part designed to dynamically collect user feedback and save it into a SharePoint list. 
 
-[picture of the solution in action, if possible]
+The web part pulls up to 5 survey questions from a configurable source list (default: `Feedbackquestions`) and submits the user's responses to a target list (default: `Download_Tracking`). It can also parse a Base64-encrypted `TrackingID` from the page's URL query string, linking the feedback response to a specific transaction or user action.
 
 ## Used SharePoint Framework Version
 
@@ -15,17 +15,17 @@ Short summary on functionality and used technologies.
 - [SharePoint Framework](https://aka.ms/spfx)
 - [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
 
-> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
 ## Prerequisites
 
-> Any special pre-requisites?
+To use this web part, ensure the following SharePoint lists exist in your site:
+1. **Target List** (e.g., `Download_Tracking`): Stores the submitted feedback. Must contain fields for the questions, tracking ID, and user acknowledgment.
+2. **Questions List** (e.g., `Feedbackquestions`): Stores the questions to be displayed in the web part.
 
 ## Solution
 
 | Solution    | Author(s)                                               |
 | ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
+| FeedbackSubmissionWebPart | Vishnu |
 
 ## Version history
 
@@ -45,30 +45,22 @@ Short summary on functionality and used technologies.
 
 - Clone this repository
 - Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **npm start**
-
-> Include any additional steps as needed.
+- In the command-line, run:
+  - `npm install`
+  - `npm start` (to run the local workbench via `heft start`)
+- To build and package for production:
+  - `npm run build` (generates the `.sppkg` file in `sharepoint/solution`)
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
+This extension illustrates the following concepts and features:
 
-This extension illustrates the following concepts:
-
-- topic 1
-- topic 2
-- topic 3
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+- **Dynamic Questions:** Pulls questions directly from a SharePoint list, making the survey easily maintainable without code changes.
+- **URL Parameter Extraction:** Decrypts a Base64-encoded `encrypted` parameter from the URL to extract a Tracking ID.
+- **Configurable Property Pane:** Allows site admins to select the target list, question list, and map specific fields directly from the SPFx Property Pane.
+- **Modern SPFx Tooling:** Uses the latest `@rushstack/heft` build toolchain instead of `gulp`.
 
 ## References
 
 - [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
